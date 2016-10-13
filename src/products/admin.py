@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import BackScratcher
+
+
+@admin.register(BackScratcher)
+class BackScratcherAdmin(admin.ModelAdmin):
+    pass
