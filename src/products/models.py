@@ -9,3 +9,6 @@ class BackScratcher(models.Model):
     sizes = ArrayField(
         models.CharField(max_length=2)
     )
+
+    def __str__(self):
+        return self.name
