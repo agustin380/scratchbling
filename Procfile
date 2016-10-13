@@ -1,1 +1,1 @@
-web: gunicorn scratchbling.wsgi:application --log-file -
+web: gunicorn scratchbling.wsgi:application --pythonpath=src --log-file -
