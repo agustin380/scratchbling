@@ -7,6 +7,7 @@ from ..models import BackScratcher
 class ProductsViewSet(mixins.CreateModelMixin,
                       mixins.ListModelMixin,
                       mixins.RetrieveModelMixin,
+                      mixins.UpdateModelMixin,
                       viewsets.GenericViewSet):
     """
     This viewset automatically provides `list`, `create`,
