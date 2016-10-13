@@ -20,10 +20,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 't!d_hb)$pynq&o2c#@1)oa3oo4$atgg$!p_ve@df=4!^ga9@pu'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', False)
 
 ALLOWED_HOSTS = []
 
@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    #'django.contrib.staticfiles',
     'rest_framework',
     'products',
 ]
@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'scratchbling',
         'USER': 'postgres',
         'PASSWORD': 'pass',
-        'HOST': '172.20.0.15',
+        'HOST': os.environ['POSTGRES_HOST'],
         'PORT': '5432',
     }
 }
@@ -118,9 +118,3 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.10/howto/static-files/
-
-STATIC_URL = '/static/'
